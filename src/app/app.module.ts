@@ -9,6 +9,8 @@ import { HeadrestComponentComponent } from './headrest-component/headrest-compon
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { FormAccountComponentComponent } from './form-account-component/form-account-component.component';
 import { RecapComponentComponent } from './recap-component/recap-component.component';
+import { ControlDirectiveDirective } from './control-directive.directive';
+import { PipeFormatPipe } from './pipe-format.pipe';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { RecapComponentComponent } from './recap-component/recap-component.compo
     HeadrestComponentComponent,
     FooterComponentComponent,
     FormAccountComponentComponent,
-    RecapComponentComponent
+    RecapComponentComponent,
+    ControlDirectiveDirective,
+    PipeFormatPipe
   ],
   imports: [
     BrowserModule,

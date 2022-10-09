@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-form-account-component',
@@ -8,14 +9,14 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class FormAccountComponentComponent implements OnInit {
 
   constructor() { }
-  firstname : String = "";
-  lastname : String = "";
+  titlecasePipe:TitleCasePipe
+  firstname : string = "";
+  lastname : string = "";
   address : String = "";
-  postalCode: String =""
-  city : String= ""
-  phoneNumber : String = ""
-  email :  String = ""
-
+  postalCode: String ="";
+  city : String= "";
+  phoneNumber : String = "";
+  email :  String = "";
   recap : String = "";
 
   ngOnInit(): void {
@@ -23,5 +24,9 @@ export class FormAccountComponentComponent implements OnInit {
   clicChange (val : String) {
     this.recap = val;
   }
-   
+  
+  transformName(){
+      this.firstname = this.titlecasePipe.transform(this.firstname);
+      this.lastname = this.titlecasePipe.transform(this.lastname);
+  }
 }
